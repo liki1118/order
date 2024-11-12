@@ -100,7 +100,10 @@ exports.GetBill=async(data)=>{
             const res = await client.query(queryText, [items]);
             const totalPrice = res.rows[0].total_price || 0;
             client.release();
-            return totalPrice.toString();
+            return{
+              items: items,
+              price: totalPrice.toString()
+            };
         }
         else{
             client.release();

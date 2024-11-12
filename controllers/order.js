@@ -53,7 +53,7 @@ exports.billMyOrder=async (req,res,next)=>{
             return res.status(404).json({ message: "Invalid name first order" });
         }
         else{
-            return res.status(404).json({ message: result });
+            return res.status(404).json(result);
         }
     }
 };
